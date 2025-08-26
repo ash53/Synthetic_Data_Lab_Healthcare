@@ -1,0 +1,18 @@
+task: image
+data:
+  dataset: MNIST
+dp:
+  enabled: false
+model:
+  type: vae
+  latent_dim: 16
+  hidden_dim: 256
+train:
+  epochs: 5
+  batch_size: 128
+  lr: 1e-3
+output:
+  synthetic_pt: data/synthetic/mnist_synth.pt
+  sample_grid_png: reports/mnist_grid.png
+  reports_dir: reports/
+seed: 123

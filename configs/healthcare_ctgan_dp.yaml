@@ -1,0 +1,35 @@
+task: tabular
+data:
+  input_csv: data/raw/healthcare_demo.csv
+  target: diagnosis_diabetes
+  categorical: [sex, smoker, diagnosis_diabetes]
+  numerical: [age, bmi, systolic_bp, diastolic_bp, cholesterol]
+dp:
+  enabled: true
+  mechanism: gaussian
+  epsilon: 2.0
+  delta: 1e-5
+model:
+  type: ctgan
+  latent_dim: 64
+  hidden_dim: 128
+  gumbel_tau: 0.5
+  cond_columns: [sex, smoker, diagnosis_diabetes]
+train:
+  epochs: 40
+  batch_size: 256
+  lr_g: 0.0001
+  lr_d: 0.0001
+output:
+  synthetic_csv: data/synthetic/healthcare_synth.csv
+  reports_dir: reports/
+privacy_attack:
+  enabled: true
+  loss_metric: log_loss
+seed: 7
+
+sampling:
+  overrides:
+    diagnosis_diabetes:
+      "0": 0.5
+      "1": 0.5

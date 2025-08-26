@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+scipy
+matplotlib
+torch
+torchvision
+tqdm
+pyyaml
+jinja2
+pytest
+ruff

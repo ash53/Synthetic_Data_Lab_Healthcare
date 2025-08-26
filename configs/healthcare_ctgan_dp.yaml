@@ -28,8 +28,17 @@ privacy_attack:
   loss_metric: log_loss
 seed: 7
 
+model:
+  type: ctgan
+  latent_dim: 64
+  hidden_dim: 128
+  gumbel_tau: 0.5
+  cond_columns: [sex, smoker, diagnosis_diabetes]
+  cond_weight: 1.0   # <— new: strength of condition-consistency loss
+
 sampling:
   overrides:
     diagnosis_diabetes:
       "0": 0.5
       "1": 0.5
+

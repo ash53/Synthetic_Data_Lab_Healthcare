@@ -97,7 +97,7 @@ from src.privacy.membership_inference import run_membership_inference
 # ────────────────────────────────────────────────────────────────────────────────
 st.title("🩺 Synthetic Electronic Health Record (EHR) Data Generator")
 st.write(
-    "Create **safe, fake Electronic Health Record (EHR) like data** so teams can prototype models **without real Protected Health Information (PHI)**. "
+    "Create **realistic, synthetic Electronic Health Record (EHR) like data** so teams can prototype models **without real Protected Health Information (PHI)**. "
     "Pick a diabetes rate, generate data, then check **utility** (can models learn?) and **privacy** (is leakage low?)."
 )
 

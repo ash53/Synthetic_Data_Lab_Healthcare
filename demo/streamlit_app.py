@@ -13,7 +13,7 @@ import inspect
 st.set_page_config(page_title="Healthcare Synthetic Data Demo", layout="wide", page_icon="🩺")
 
 # ────────────────────────────────────────────────────────────────────────────────
-# Recruiter-friendly helpers (plain English KPIs & summary)
+# KPIs & summary
 # ────────────────────────────────────────────────────────────────────────────────
 def friendly_takeaway(auc_real, auc_synth, mem_auc):
     """Return one sentence a non-technical person can read."""
@@ -93,7 +93,7 @@ from src.eval.metrics import evaluate_tabular
 from src.privacy.membership_inference import run_membership_inference
 
 # ────────────────────────────────────────────────────────────────────────────────
-# UI — recruiter-friendly copy
+# UI 
 # ────────────────────────────────────────────────────────────────────────────────
 st.title("🩺 Synthetic Electronic Health Record (EHR) Data Generator")
 st.write(
@@ -234,7 +234,7 @@ if gen_btn:
             synth_df.to_csv(SYNTHETIC_CSV, index=False)
             eval_res, membership = run_eval(cfg, synth_df)
 
-        # Recruiter-friendly KPIs (plain English)
+        # KPIs
         k1, k2, k3 = st.columns(3)
         auc_real  = eval_res.get("downstream_auc", {}).get("train_real", None)
         auc_synth = eval_res.get("downstream_auc", {}).get("train_synth_test_real", None)

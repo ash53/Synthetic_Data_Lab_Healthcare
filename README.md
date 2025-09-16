@@ -1,10 +1,10 @@
-# 🩺 Synthetic Data Lab — Healthcare (CTGAN + DP + Membership Inference)
+# Synthetic Data Lab — Healthcare (CTGAN + DP + Membership Inference)
 
-> **What this is :** Generate **safe, fake EHR-like tabular data** with a CTGAN-style conditional generator (optional **differential privacy**) and a **membership-inference** harness to check privacy risk—plus a Streamlit demo for recruiters.
+> **What this is :** Generate **safe, fake Electronic Health Record (EHR) like tabular data** with a CTGAN-style conditional generator (optional **differential privacy**) and a **membership-inference** harness to check privacy risk—plus a Streamlit demo for recruiters.
 
 ---
 
-## ✨ Features
+## Features
 
 - **CTGAN-style conditional generator** (control label / category mix)
 - **Optional Differential Privacy** (noisy gradients)
@@ -14,7 +14,7 @@
 
 ---
 
-## 🗂️ Project Layout
+## Project Layout
 
 ```
 .
@@ -32,7 +32,7 @@
 
 ---
 
-## 🚀 Quickstart (CLI)
+## Quickstart (CLI)
 
 ```bash
 # Create env
@@ -72,7 +72,7 @@ The demo lets you:
 
 ---
 
-## ☁️ Deploy the Demo
+## Deploy the Demo
 
 ### Option A — **Hugging Face Spaces (Docker SDK)** _(recommended for PyTorch reliability)_
 
@@ -114,7 +114,7 @@ license: mit
 
 ---
 
-## 📊 Outputs
+## Outputs
 
 - **`reports/eval.json`** — KS/Wasserstein per numeric feature, correlation gap (abs mean diff), downstream AUC:
   - `train_real` (Train Real → Test Real)
@@ -123,13 +123,13 @@ license: mit
 
 ---
 
-## 🧪 Tech Stack
+## Tech Stack
 
 - Python, PyTorch, NumPy, Pandas, scikit-learn, Streamlit, Plotly
 
 ---
 
-## 🔒 Privacy & Safety Notes
+## Privacy & Safety Notes
 
 - The included dataset is **synthetic/toy**; the project is for research & demo use.
 - When enabling **DP**, expect some utility drop; tune ε & training to balance risk vs. accuracy.

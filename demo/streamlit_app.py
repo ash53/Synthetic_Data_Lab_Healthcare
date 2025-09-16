@@ -287,12 +287,7 @@ if gen_btn:
                 fig_d.update_layout(title_text=col)
                 st.plotly_chart(fig_d, use_container_width=True)
 
-            # st.subheader("Correlation Heatmaps")
-            # c1, c2 = st.columns(2)
-            # real_corr  = real_df[cfg["data"]["numerical"]].corr()
-            # synth_corr = synth_df[cfg["data"]["numerical"]].corr()
-            # c1.plotly_chart(px.imshow(real_corr,  text_auto=True, title="Real (numeric corr)"),  use_container_width=True)
-            # c2.plotly_chart(px.imshow(synth_corr, text_auto=True, title="Synthetic (numeric corr)"), use_container_width=True)
+            
             
             st.subheader("Correlation Heatmaps")
 

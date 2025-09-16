@@ -1,4 +1,4 @@
-# Synthetic Data Lab — Healthcare (CTGAN + DP + Membership Inference)
+# Synthetic EHR Data Generator (CTGAN + DP + Membership Inference)
 
 > **What this is :** Generate **safe, fake Electronic Health Record (EHR) like tabular data** with a CTGAN-style conditional generator (optional **differential privacy**) and a **membership-inference** harness to check privacy risk—plus a Streamlit demo.
 

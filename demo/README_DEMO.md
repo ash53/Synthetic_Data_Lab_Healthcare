@@ -1,11 +1,11 @@
 # Streamlit Demo for Privacy-Preserving Healthcare Synthetic Data Generator
 
-This folder adds a **visual, interactive demo** (Streamlit) to your repo.
+This folder adds a **visual, interactive demo** (Streamlit) to the repo.
 
 ## Local run
 
 ```bash
-# from your repo root (where src/ exists)
+# from repo root (where src/ exists)
 pip install -r demo/requirements-demo.txt
 streamlit run demo/streamlit_app.py
 ```

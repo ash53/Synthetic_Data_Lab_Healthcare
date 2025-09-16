@@ -287,12 +287,40 @@ if gen_btn:
                 fig_d.update_layout(title_text=col)
                 st.plotly_chart(fig_d, use_container_width=True)
 
+            # st.subheader("Correlation Heatmaps")
+            # c1, c2 = st.columns(2)
+            # real_corr  = real_df[cfg["data"]["numerical"]].corr()
+            # synth_corr = synth_df[cfg["data"]["numerical"]].corr()
+            # c1.plotly_chart(px.imshow(real_corr,  text_auto=True, title="Real (numeric corr)"),  use_container_width=True)
+            # c2.plotly_chart(px.imshow(synth_corr, text_auto=True, title="Synthetic (numeric corr)"), use_container_width=True)
+            
             st.subheader("Correlation Heatmaps")
-            c1, c2 = st.columns(2)
+
             real_corr  = real_df[cfg["data"]["numerical"]].corr()
             synth_corr = synth_df[cfg["data"]["numerical"]].corr()
-            c1.plotly_chart(px.imshow(real_corr,  text_auto=True, title="Real (numeric corr)"),  use_container_width=True)
-            c2.plotly_chart(px.imshow(synth_corr, text_auto=True, title="Synthetic (numeric corr)"), use_container_width=True)
+
+            fig_real = px.imshow(
+                real_corr.round(2),
+                title="Real (numeric corr)",
+                color_continuous_scale="RdBu",
+                zmin=-1, zmax=1,  # symmetric range so colors are comparable
+                aspect="auto",
+            )
+            fig_real.update_layout(margin=dict(l=10, r=10, t=40, b=10))
+
+            fig_synth = px.imshow(
+                synth_corr.round(2),
+                title="Synthetic (numeric corr)",
+                color_continuous_scale="RdBu",
+                zmin=-1, zmax=1,
+                aspect="auto",
+            )
+            fig_synth.update_layout(margin=dict(l=10, r=10, t=40, b=10))
+
+            c1, c2 = st.columns(2)
+            c1.plotly_chart(fig_real,  use_container_width=True)
+            c2.plotly_chart(fig_synth, use_container_width=True)
+
 
         if simple_mode:
             with st.expander("See details (distributions, correlations)"):

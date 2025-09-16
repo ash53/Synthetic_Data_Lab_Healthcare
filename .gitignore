@@ -2,7 +2,7 @@
 __pycache__/
 .ipynb_checkpoints/
 *.pt
-*.png
+# *.png
 data/raw/*
 !data/raw/healthcare_demo.csv
 data/synthetic/*
